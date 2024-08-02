@@ -1,3 +1,4 @@
+//Valid Login
 describe('Verify Valid Login', () => {
 
   it('should login successfully', () => {
@@ -13,17 +14,31 @@ function launchApplication() {}
 
 function clickLoginButton() {}
   cy.get('[data-test="login-button"]').click()
-  
-  
-
-  
+  cy.get('[data-test="inventory-list"]').should('be.visible')
   
   })
 })
 
 //Invalid login
+describe('Verify Invalid Login', () => {
 
+  it('should NOT login successfully', () => {
 
+const validUsername = 'standarduser'
+const validPassword = 'secretsauce'
+
+function launchApplication() {}
+  cy.visit('https://saucedemo.com/');
+
+  cy.get('[data-test="username"]').type(validUsername)
+  cy.get('[data-test="password"]').type(validPassword)
+
+function clickLoginButton() {}
+  cy.get('[data-test="login-button"]').click()
+  cy.get('[data-test="error"]').should('be.visible')  
+  
+  })
+})
 
 //Navigating through pages
 
