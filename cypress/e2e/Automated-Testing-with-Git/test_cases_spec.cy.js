@@ -24,14 +24,14 @@ describe('Verify Invalid Login', () => {
 
   it('should NOT login successfully', () => {
 
-const validUsername = 'standarduser'
-const validPassword = 'secretsauce'
+const invalidUsername = 'standarduser'
+const invalidPassword = 'secretsauce'
 
 function launchApplication() {}
   cy.visit('https://saucedemo.com/');
 
-  cy.get('[data-test="username"]').type(validUsername)
-  cy.get('[data-test="password"]').type(validPassword)
+  cy.get('[data-test="username"]').type(invalidUsername)
+  cy.get('[data-test="password"]').type(invalidPassword)
 
 function clickLoginButton() {}
   cy.get('[data-test="login-button"]').click()
