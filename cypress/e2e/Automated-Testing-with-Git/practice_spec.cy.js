@@ -14,6 +14,8 @@ describe('Navigating through pages', () => {
   function clickLoginButton() {}
     cy.get('[data-test="login-button"]').click()
     cy.get('[data-test="inventory-list"]').should('be.visible')
+
+    cy.get('[data-test="item-4-title-link"] > [data-test="inventory-item-name"]').click()
     
     
     })
