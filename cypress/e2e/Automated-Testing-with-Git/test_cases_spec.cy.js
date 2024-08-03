@@ -11,9 +11,10 @@ function launchApplication() {}
 
   cy.get('[data-test="username"]').type(validUsername)
   cy.get('[data-test="password"]').type(validPassword)
-
-function clickLoginButton() {}
   cy.get('[data-test="login-button"]').click()
+
+function verifyInventoryList() {}
+
   cy.get('[data-test="inventory-list"]').should('be.visible')
   
   })
@@ -32,9 +33,10 @@ function launchApplication() {}
 
   cy.get('[data-test="username"]').type(invalidUsername)
   cy.get('[data-test="password"]').type(invalidPassword)
-
-function clickLoginButton() {}
   cy.get('[data-test="login-button"]').click()
+
+function verifyInventoryList() {}
+
   cy.get('[data-test="error"]').should('be.visible')  
   
   })
@@ -76,7 +78,33 @@ function openDropDownMenu() {}
 })
 
 //Adding items to cart
+describe('Add Product to Cart Successfully', () => {
 
+  it('should be able to add product to cart successfully', () => {
+
+const validUsername = 'standard_user'
+const validPassword = 'secret_sauce'
+
+function launchApplication() {}
+  cy.visit('https://saucedemo.com/');
+
+  cy.get('[data-test="username"]').type(validUsername)
+  cy.get('[data-test="password"]').type(validPassword)
+  cy.get('[data-test="login-button"]').click()
+
+function verifyInventoryList() {}
+
+  cy.get('[data-test="inventory-list"]').should('be.visible')
+
+function verifyAddtoCart() {}
+  cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+  cy.get('[data-test="add-to-cart-sauce-labs-onesie"]').click()
+
+function verifyShoppingCart() {}
+  cy.get('[data-test="shopping-cart-link"]').click()
+  
+  })
+})
 
 
 //Checking out
