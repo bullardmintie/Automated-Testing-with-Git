@@ -106,5 +106,40 @@ function verifyShoppingCart() {}
   })
 })
 
-
 //Checking out
+describe('Verify Valid Login', () => {
+
+  it('should login successfully', () => {
+
+const validUsername = 'standard_user'
+const validPassword = 'secret_sauce'
+
+function launchApplication() {}
+  cy.visit('https://saucedemo.com/');
+
+  cy.get('[data-test="username"]').type(validUsername)
+  cy.get('[data-test="password"]').type(validPassword)
+  cy.get('[data-test="login-button"]').click()
+
+function verifyInventoryList() {}
+  cy.get('[data-test="inventory-list"]').should('be.visible')
+
+function AddtoCart () {}
+  cy.get('[data-test="add-to-cart-sauce-labs-onesie"]').click()
+
+function verifyShoppingCart() {}
+  cy.get('[data-test="shopping-cart-link"]').click()
+
+function completeCheckout() {}
+  cy.get('[data-test="checkout"]').click()
+  cy.get('[data-test="firstName"]').type('John')
+  cy.get('[data-test="lastName"]').type('Doe')
+  cy.get('[data-test="postalCode"]').type('49337')
+  cy.get('[data-test="continue"]').click()
+  cy.get('[data-test="payment-info-value"]').should('be.visible')
+  cy.get('[data-test="shipping-info-value"]').should('be.visible')
+  cy.get('[data-test="finish"]').click()
+  cy.get('[data-test="checkout-complete-container"]').should('be.visible')
+
+  })
+})
