@@ -1,7 +1,6 @@
 #Project Title
 Automated-Testing-with-Git
 
-
 #Description
 
 
@@ -9,5 +8,6 @@ Automated-Testing-with-Git
 
 
 #Credits
-Coding Temple - Mintie Bullard
 
+Coding Temple - Mintie Bullard
+https://github.com/bullardmintie
