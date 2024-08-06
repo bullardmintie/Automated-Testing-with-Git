@@ -2,7 +2,7 @@
  Automated-Testing-with-Git
 
 # Description:
-I have written up sample test automations for the functionalities of:
+I have been working on samples for test automations on the functionalities of:
 Valid Login
 Invalid Login
 Navigating through pages
