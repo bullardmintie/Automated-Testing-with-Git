@@ -38,7 +38,7 @@ function launchApplication() {}
 function verifyInventoryList() {}
 
   cy.get('[data-test="error"]').should('be.visible')  
-  
+
   })
 })
 
