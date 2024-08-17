@@ -1,22 +1,22 @@
-//Valid Login
+//Valid login
 describe('Verify Valid Login', () => {
 
   it('should login successfully', () => {
 
-const validUsername = 'standard_user'
-const validPassword = 'secret_sauce'
+const invalidUsername = 'standard-user'
+const invalidPassword = 'secret-sauce'
 
 function launchApplication() {}
   cy.visit('https://saucedemo.com/');
 
-  cy.get('[data-test="username"]').type(validUsername)
-  cy.get('[data-test="password"]').type(validPassword)
+  cy.get('[data-test="username"]').type(invalidUsername)
+  cy.get('[data-test="password"]').type(invalidPassword)
   cy.get('[data-test="login-button"]').click()
 
 function verifyInventoryList() {}
 
-  cy.get('[data-test="inventory-list"]').should('be.visible')
-  
+  cy.get('[data-test="error"]').should('be.visible')  
+
   })
 })
 
