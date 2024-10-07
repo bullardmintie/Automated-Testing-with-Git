@@ -4,6 +4,17 @@ jobs:
   cypress-run:
     runs-on: ubuntu-22.04
     steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Valid Login
         uses: cypress-io/github-action@v6
 
@@ -13,15 +24,29 @@ jobs:
           CYPRESS_host: https://saucedemo.com/
           CYPRESS_port: 5001
 
-      - name: Check Out
-        uses: actions/checkout@v4
+      - name: Run build and start
         env:
           CYPRESS_host: https://saucedemo.com/
           CYPRESS_port: 5001
-        with:
-          build: npm run build
-          start: npm start
-          browser: chrome
+        run: |
+          npm run build
+          npm start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
