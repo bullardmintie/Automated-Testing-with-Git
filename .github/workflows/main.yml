@@ -12,13 +12,27 @@ jobs:
         env:
           CYPRESS_host: https://saucedemo.com/
           CYPRESS_port: 5001
-        
+
       - name: Check Out
         uses: actions/checkout@v4
         env:
           CYPRESS_host: https://saucedemo.com/
           CYPRESS_port: 5001
-          with:
-            build: npm run build
-            start: npm start
-            browser: chrome
+        with:
+          build: npm run build
+          start: npm start
+          browser: chrome
+
+
+
+
+
+
+
+
+
+
+
+
+
+
